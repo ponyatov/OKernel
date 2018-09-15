@@ -1,11 +1,14 @@
 #include "Piumarta.hpp"
 
 int main(int argc, char *argv[]) {
-	cout << endl << "Piumarta object virtual machine: ";
-   	cout << argv[0] << endl << endl;
+	std::cout << std::endl << "Piumarta object virtual machine: ";
+   	std::cout << argv[0] << std::endl << std::endl;
 	return yyparse();
 }
 
-#define YYERR "\n\n" << yylineno << ":" << msg << "[" << yytext << "]\n\n"
-void yyerror(string msg) { cout << YYERR; cerr << YYERR ; exit(-1); }
+Object::Object(std::string T, std::string V) { tag=T; val=V; }
+Object::Object(std::string V):Object("object",V){}
+
+std::string Object::head(std::string prefix) { return head(); }
+std::string Object::dump(int depth) { return "<"+tag+":"+val+">\n"; }
 

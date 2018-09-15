@@ -2,10 +2,17 @@
 #include "Piumarta.hpp"
 %}
 
-%defines %union { string *s; }
+%defines %union { Object *o; }
 
-%token <s> SYM
+%token <o> SYM
 
 %%
-REPL : | REPL SYM { cout << "<" << *$2 << ">" << endl; }
+REPL : | REPL SYM { std::cout << $2->dump() << std::endl; }
 %%
+
+#define YYERR "\n\n" << yylineno << ":" << msg << "[" << yytext << "]\n\n"
+void yyerror(std::string msg) {
+	std::cout << YYERR; std::cerr << YYERR;
+	exit(-1);
+}
+

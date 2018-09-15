@@ -17,7 +17,8 @@ lex.yy.c: src/$(MODULE).lpp
 	flex $<
 
 CXXFLAGS += -I. -I./src
+CXXFLAGS += -std=gnu++11
 
-./$(MODULE).exe: $(C) $(H)
+./$(MODULE).exe: $(C) $(H) Makefile
 	$(CXX) $(CXXFLAGS) -o $@ $(C)
 

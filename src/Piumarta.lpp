@@ -7,7 +7,7 @@
 %%
 #[^\n]*			{}						/* line comment */
 
-[a-zA-Z0-9_]+	{ yylval.s = new string(yytext); return SYM; }
+[a-zA-Z0-9_]+	TOC(Object,SYM)			/* single symbol */
 
 [ \t\r\n]+		{}						/* drop spaces */
 .				{yyerror("lexer");}		/* error on undetected char */
