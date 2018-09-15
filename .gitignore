@@ -4,3 +4,6 @@
 *.log
 *.o
 
+*.tab.?pp
+lex.yy.c
+

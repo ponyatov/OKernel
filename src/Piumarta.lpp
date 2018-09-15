@@ -1,0 +1,13 @@
+%{
+#include "Piumarta.hpp"
+%}
+
+%option yylineno noyywrap
+
+%%
+#[^\n]*			{}						/* line comment */
+
+[a-zA-Z0-9_]+	{ yylval.s = new string(yytext); return SYM; }
+
+[ \t\r\n]+		{}						/* drop spaces */
+.				{yyerror("lexer");}		/* error on undetected char */
