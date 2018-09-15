@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "DmitryPonyatov 9/15/2018 13:35",
+	"super" : "OObject",
+	"category" : "OKernel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OMessage",
+	"type" : "normal"
+}

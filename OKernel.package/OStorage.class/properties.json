@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "DmitryPonyatov 9/15/2018 13:35",
+	"super" : "Object",
+	"category" : "OKernel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OStorage",
+	"type" : "normal"
+}

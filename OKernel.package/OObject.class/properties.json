@@ -1,0 +1,22 @@
+{
+	"commentStamp" : "DmitryPonyatov 9/15/2018 13:34",
+	"super" : "Object",
+	"category" : "OKernel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"lastgen",
+		"ramstorage"
+	],
+	"instvars" : [
+		"tag",
+		"val",
+		"attr",
+		"nest",
+		"ref",
+		"gen",
+		"storage"
+	],
+	"name" : "OObject",
+	"type" : "normal"
+}
