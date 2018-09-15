@@ -2,20 +2,42 @@
 #define Piumarta_H_
 
 #include <iostream>
+#include <sstream>
 #include <cstdlib>
+#include <vector>
+#include <map>
+#include <cassert>
 
 // Piumarta core Object
 
 struct Object {
-	std::string tag;									// type/class tag
-	std::string val;									// primitive value
+
+	std::string tag;								// type/class tag
+	std::string val;								// primitive value
 
 	Object(std::string V);
-	Object(std::string T, std::string V);				// <T:V> constructor
+	Object(std::string T, std::string V);			// <T:V> constructor
+
+	std::vector<Object*> *nest;						// ordered container
+													// (AST nest[]ed elements)
+	Object* push(Object*);							// push to nest[] as stack
+	Object* pop();									// pop from nest[] as stack
+
+	std::map<std::string,Object*> attr;				// named object slots
 														
-	virtual std::string dump(int depth=0);				// dump object in tree
-	virtual std::string head(std::string prefix="");	// with header only
+	virtual std::string dump(int depth=0);			// dump object in tree
+	virtual std::string head(std::string prefix="");// with header only
+	std::string pad(int depth);						// pad tree with tabs
+
 };
+
+extern std::vector<Object*> *pool;					// global object pool
+
+struct Environment:Object { Environment(std::string V); };
+
+extern Environment *global;							// global environment
+
+struct Symbol:Object	{ Symbol(std::string V); };
 
 // lexer/parser interface
 
