@@ -50,7 +50,7 @@ std::string Object::dump(int depth)				{
 			S += (*j)->dump(depth+1);
 			dumped[*j] = true;
 		}
-	if (depth==0) dumped.clear();
+	if (depth==0) dumped.clear();				// clean up memory after dump
 	return S;
 }
 

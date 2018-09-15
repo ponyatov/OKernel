@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "DmitryPonyatov 9/15/2018 16:31",
+	"super" : "Object",
+	"category" : "OKernel-Piumarta",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"vtable"
+	],
+	"name" : "PObject",
+	"type" : "normal"
+}
